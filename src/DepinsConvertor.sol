@@ -37,7 +37,13 @@ contract DepinsConvertor {
         require(MerkleProof.verify(proof, root, node), "invalid proof");
 
         claimed[_account] = true;
-        MintableToken(depins).mint(_account, _amount);
+
+        uint256 _foundationAmount = _amount * 10 / 100;
+        uint256 _userAmount = _amount - _foundationAmount;
+
+        MintableToken _depins = MintableToken(depins);
+        _depins.mint(_account, _userAmount);
+        _depins.mint(foundation, _foundationAmount);
         emit Claim(_account, _amount);
     }
 }
