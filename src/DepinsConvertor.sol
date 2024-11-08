@@ -11,9 +11,9 @@ contract DepinsConvertor {
     event Claim(address indexed account, uint256 amount);
 
     uint256 public immutable foundationAmount;
-    bytes32 public root;
-    address public depins;
-    address public foundation;
+    bytes32 public immutable root;
+    address public immutable depins;
+    address public immutable foundation;
     mapping(address => bool) public claimed;
 
     constructor(bytes32 _root, address _depins, address _foundation, uint256 _foundationAmount) {

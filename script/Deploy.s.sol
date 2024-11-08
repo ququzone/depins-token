@@ -13,7 +13,7 @@ contract Deployer is Script {
         DepinsConvertor convertor = new DepinsConvertor(
             0xd22ababf9f3c50dd78726bedaad69a7b9b1d5514bad6eb476e88a83e67777b97,
             address(token),
-            0x1B4508C227A55Fa0FD2165b3d0B6260379e8E752,
+            0x2acbA0D858b9674aA6980a5a9D8c96Cd82780ffc,
             840000000000000000000000000
         );
         vm.stopBroadcast();
